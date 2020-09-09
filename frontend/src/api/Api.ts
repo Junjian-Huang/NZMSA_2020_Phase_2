@@ -7,15 +7,13 @@ export const getArray = async () => {
       headers: {
         Accept: "application/json",
       },
-    })
-      .then((res) => res.json())
-      .then((res) => JSON.parse(res));
+    }).then((res) => res.json()).then(res => JSON.parse(res));
     return response;
   };
 
   export interface ModifyProps {
-    position: { row: number; col: number };
-    colour: string;
+    position: { row: number; col: number },
+    colour: string
   }
 
   export const modifyArray = async ({ position: { row, col }, colour }: ModifyProps) => {
@@ -26,6 +24,6 @@ export const getArray = async () => {
         Accept: "*/*",
         "Content-Type": "application/json",
       },
-      method: "PUT",
+      method: "PUT"
     });
-  };
+  }

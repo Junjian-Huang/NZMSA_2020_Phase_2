@@ -6,12 +6,13 @@ const CircularProgress = () => (
     <div
       style={{
         display: "flex",
-        justifyContent: "center",
+        justifyContent: 'center',
         alignItems: "center",
         height: "100vh",
-      }}>
-      <Progress disableShrink />
+      }}
+    >
+        <Progress disableShrink />
     </div>
-  );
+  )
   
   export default CircularProgress;
