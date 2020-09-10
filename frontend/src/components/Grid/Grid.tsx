@@ -68,8 +68,9 @@ const Grid = (props: IGridProps) =>{
                 <Modal
                     open={modalOpen}
                     onClose={() => setModalOpen(false)}
-                    style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <ColorPicker selectedElement={selectedElement} modifyArray={props.modifyArray!} closeModal={() => setModalOpen(false)}/>
+                    style={{ display: 'flex', alignItems: 'center', justifyContent: 'center'}}
+                    >
+                    <ColorPicker selectedElement={selectedElement} modifyArray={props.modifyArray!} closeModal={() => setModalOpen(false)}/>
                 </Modal>
             )}
         </>)

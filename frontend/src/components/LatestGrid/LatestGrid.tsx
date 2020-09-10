@@ -22,7 +22,7 @@ const LatestGrid = () => {
       const modifyColour = async (props: ModifyProps) => {
         await modifyArray(props);
         setColourArray(await getArray());
-      };
+      }
 
       return isLoading ? <CircularProgress /> : <Grid colourArray={colourArray} canEdit={true} modifyArray={modifyColour} />
 }

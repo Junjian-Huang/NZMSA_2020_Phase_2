@@ -4,7 +4,7 @@ import { Button, Paper } from '@material-ui/core';
 import { ModifyProps } from '../../api/Api';
 
 interface PickerProps {
-    selectedElement: { row: number, col: number, colour:string},
+    selectedElement : { row:number, col: number, colour: string},
     modifyArray: (props: ModifyProps) => void,
     closeModal: () => void
 }

@@ -9,7 +9,7 @@ export const getArray = async () => {
       },
     }).then((res) => res.json()).then(res => JSON.parse(res));
     return response;
-  };
+  }
 
   export interface ModifyProps {
     position: { row: number; col: number },

@@ -42,7 +42,7 @@ namespace NzmsaPhase2BackendAPI
            {
                options.AddPolicy(MyAllowSpecificOrigins, builder =>
               {
-                  builder.WithOrigins("http://localhost:3000","frontend.com")
+                  builder.WithOrigins("http://localhost:3000" ,"/api/Canvas/")
                       .AllowAnyHeader()
                       .AllowAnyMethod();
               });
