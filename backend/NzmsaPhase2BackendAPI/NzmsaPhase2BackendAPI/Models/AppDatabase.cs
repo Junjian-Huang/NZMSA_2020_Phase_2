@@ -12,5 +12,10 @@ namespace NzmsaPhase2BackendAPI.Models
         {
 
         }
+
+        public DbSet<Canvas> Canvas { get; set; }
+
+        public DbSet<ColorData> ColorData { get; set; }
+
     }
 }
