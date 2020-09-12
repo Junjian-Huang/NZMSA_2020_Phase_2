@@ -77,4 +77,4 @@ D:\NZMSA_projects\NZMSA_2020_Phase_2\backend\NzmsaPhase2BackendAPI\NzmsaPhase2Ba
 D:\NZMSA_projects\NZMSA_2020_Phase_2\backend\NzmsaPhase2BackendAPI\NzmsaPhase2BackendAPI\obj\Debug\netcoreapp3.1\NzmsaPhase2BackendAPI.MvcApplicationPartsAssemblyInfo.cs
 D:\NZMSA_projects\NZMSA_2020_Phase_2\backend\NzmsaPhase2BackendAPI\NzmsaPhase2BackendAPI\obj\Debug\netcoreapp3.1\NzmsaPhase2BackendAPI.MvcApplicationPartsAssemblyInfo.cache
 D:\NZMSA_projects\NZMSA_2020_Phase_2\backend\NzmsaPhase2BackendAPI\NzmsaPhase2BackendAPI\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.json
-D:\NZMSA_projects\NZMSA_2020_Phase_2\backend\NzmsaPhase2BackendAPI\NzmsaPhase2BackendAPI\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.msa-phase2 - Web Deploy.json
+D:\NZMSA_projects\NZMSA_2020_Phase_2\backend\NzmsaPhase2BackendAPI\NzmsaPhase2BackendAPI\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.junjianHuangMsaPhase2 - Web Deploy.json
