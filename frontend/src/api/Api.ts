@@ -1,4 +1,4 @@
-const API_BASE_URL = process.env.NODE_ENV === "development" ? "https://localhost:44301/api/" : "https://msa-2020-api.azurewebsites.net/api/";
+const API_BASE_URL = process.env.NODE_ENV === "development" ? "https://localhost:44301/api/" : "https://msap2.database.windows.net";
 
 const CANVAS_API_URL = API_BASE_URL + "Canvas/";
 
@@ -17,7 +17,7 @@ export const getArray = async () => {
   }
 
   export const modifyArray = async ({ position: { row, col }, colour }: ModifyProps) => {
-    const body = JSON.stringify({ row: row, column: col, hex: colour });
+    const body = JSON.stringify({ row: row, column: col, hex: colour});
     await fetch(CANVAS_API_URL + "UpdateCell", {
       body,
       headers: {

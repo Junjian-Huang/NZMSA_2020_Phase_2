@@ -42,7 +42,7 @@ namespace NzmsaPhase2BackendAPI
            {
                options.AddPolicy(MyAllowSpecificOrigins, builder =>
               {
-                  builder.WithOrigins("http://localhost:3000" ,"/api/Canvas/")
+                  builder.WithOrigins("http://localhost:3000" , "msap2.database.windows.net")
                       .AllowAnyHeader()
                       .AllowAnyMethod();
               });
