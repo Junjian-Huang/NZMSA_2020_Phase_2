@@ -6,6 +6,10 @@
     }
   },
   "parameters": {
+    "resourceGroup1": {
+      "Type": "resourceGroup",
+      "Value": "MSA2020"
+    },
     "resourceGroup": {
       "Type": "resourceGroup",
       "Value": "SchoolSIMS"
