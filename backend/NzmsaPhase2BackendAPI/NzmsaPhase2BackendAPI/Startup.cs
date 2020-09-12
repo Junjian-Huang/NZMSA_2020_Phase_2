@@ -42,7 +42,7 @@ namespace NzmsaPhase2BackendAPI
            {
                options.AddPolicy(MyAllowSpecificOrigins, builder =>
               {
-                  builder.WithOrigins("http://localhost:3000" , "msa-phase2.azurewebsites.net")
+                  builder.WithOrigins("http://localhost:3000" , "junjianhuangmsaphase2.azurewebsites.net")
                       .AllowAnyHeader()
                       .AllowAnyMethod();
               });
