@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="msa-phase2" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^D:\\NZMSA_projects\\NZMSA_2020_Phase_2\\backend\\NzmsaPhase2BackendAPI\\NzmsaPhase2BackendAPI\\obj\\Release\\netcoreapp3\.1\\PubTmp\\Out\\$" />
+  </parameter>
+</parameters>

@@ -1,4 +1,4 @@
-const API_BASE_URL = process.env.NODE_ENV === "development" ? "https://localhost:44301/api/" : "https://msap2.database.windows.net";
+const API_BASE_URL = process.env.NODE_ENV === "development" ? "https://localhost:44301/api/" : "https://msa-phase2.azurewebsites.net";
 
 const CANVAS_API_URL = API_BASE_URL + "Canvas/";
 
