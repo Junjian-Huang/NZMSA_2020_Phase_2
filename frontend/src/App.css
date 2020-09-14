@@ -6,6 +6,7 @@
   padding: 0px;
   font-size: 0px;
   background-color: black;
+  box-sizing: content;
 }
 
 .cell {
@@ -14,4 +15,27 @@
   margin: 0;
   padding: 0;
   box-sizing: content-box;
+}
+
+.header{
+  text-align: center;
+  background: #F8F8F8;
+  margin-bottom: 20px;
+  padding: 15px;
+  min-width: 600px;
+}
+
+.footer{
+  padding: 50px;
+  text-align: center;
+}
+
+@media (min-width: 768px){
+  .col-md-6{
+      max-width: none !important;
+  }
+}
+
+#info{
+  margin: 0 12.5%;
 }

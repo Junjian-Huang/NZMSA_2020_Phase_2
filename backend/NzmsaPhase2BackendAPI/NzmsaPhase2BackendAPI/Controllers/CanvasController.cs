@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using NzmsaPhase2BackendAPI.Models;
+using System;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace NzmsaPhase2BackendAPI.Controllers
 {
@@ -36,9 +35,9 @@ namespace NzmsaPhase2BackendAPI.Controllers
                 .ThenBy(c => c.ColumnIndex)
                 .ToArray();
 
-            for(int i=0; i < SIZE; i++)
+            for (int i = 0; i < SIZE; i++)
             {
-                for(int j=0; j<SIZE; j++)
+                for (int j = 0; j < SIZE; j++)
                 {
                     output[i, j] = colorData[(SIZE * i) + j].Hex;
                 }

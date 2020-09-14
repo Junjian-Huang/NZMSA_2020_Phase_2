@@ -1,21 +1,15 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Hangfire;
 using Hangfire.MemoryStorage;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using NzmsaPhase2BackendAPI.Models;
 using NzmsaPhase2BackendAPI.PeriodicJobs;
+using System;
 
 namespace NzmsaPhase2BackendAPI
 {
@@ -42,7 +36,7 @@ namespace NzmsaPhase2BackendAPI
            {
                options.AddPolicy(MyAllowSpecificOrigins, builder =>
               {
-                  builder.WithOrigins("http://localhost:3000" , "junjianhuangmsaphase2.azurewebsites.net")
+                  builder.WithOrigins("http://localhost:3000", "http://junjianhuangmsaphase2.azurewebsites.net")
                       .AllowAnyHeader()
                       .AllowAnyMethod();
               });
@@ -53,7 +47,7 @@ namespace NzmsaPhase2BackendAPI
                 options.UseSqlServer(Configuration.GetConnectionString("sqlDatabase"));
             });
 
-            services.AddHangfire( config => config.UseMemoryStorage());
+            services.AddHangfire(config => config.UseMemoryStorage());
 
             services.AddHangfireServer();
             services.AddScoped<IPeriodicCanvasJobs, PeriodicCanvasJobs>();
@@ -78,6 +72,7 @@ namespace NzmsaPhase2BackendAPI
             app.UseSwaggerUI(x =>
            {
                x.SwaggerEndpoint("/swagger/v1/swagger.json", "My first API");
+               x.RoutePrefix = string.Empty; // launch swagger from root
            });
 
             app.UseCors(MyAllowSpecificOrigins);

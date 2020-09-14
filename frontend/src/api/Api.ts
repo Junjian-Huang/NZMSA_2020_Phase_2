@@ -1,6 +1,6 @@
-const API_BASE_URL = process.env.NODE_ENV === "development" ? "https://localhost:44301/api/" : "https://junjianhuangmsaphase2.azurewebsites.net";
+const API_BASE_URL = process.env.NODE_ENV === "development" ? "https://localhost:3000/" : "https://junjianhuangmsaphase2.azurewebsites.net/";
 
-const CANVAS_API_URL = API_BASE_URL + "Canvas/";
+const CANVAS_API_URL = "https://junjianhuangmsaphase2.azurewebsites.net/";
 
 export const getArray = async () => {
     let response = await fetch(CANVAS_API_URL + "GetCanvas", {

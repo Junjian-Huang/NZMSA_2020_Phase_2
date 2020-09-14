@@ -1,8 +1,4 @@
 ﻿using NzmsaPhase2BackendAPI.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace NzmsaPhase2BackendAPI.PeriodicJobs
 {
@@ -14,7 +10,7 @@ namespace NzmsaPhase2BackendAPI.PeriodicJobs
     public class PeriodicCanvasJobs : IPeriodicCanvasJobs
     {
         private AppDatabase _context;
-        private int SIZE =  32;
+        private int SIZE = 32;
 
         public PeriodicCanvasJobs(AppDatabase context)
         {
@@ -25,20 +21,20 @@ namespace NzmsaPhase2BackendAPI.PeriodicJobs
         {
             var matrix = new ColorData[SIZE * SIZE];
 
-            for(int i = 0; i < SIZE; i++)
+            for (int i = 0; i < SIZE; i++)
             {
-                for(int j = 0; j < SIZE; j++)
+                for (int j = 0; j < SIZE; j++)
                 {
                     matrix[(SIZE * i) + j] = new ColorData
                     {
                         RowIndex = i,
                         ColumnIndex = j,
-                        Hex = "#FFFFF"
+                        Hex = "#ffffff"
                     };
                 }
             }
-           _context.Canvas.Add(new Canvas { ColorData = matrix});
-           _context.SaveChanges();
+            _context.Canvas.Add(new Canvas { ColorData = matrix });
+            _context.SaveChanges();
 
         }
 
