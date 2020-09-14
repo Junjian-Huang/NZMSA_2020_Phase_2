@@ -11,12 +11,12 @@ namespace NzmsaPhase2BackendAPI.Controllers
 {
     public class CanvasController : Controller
     {
-        private AppDatabase _contect;
+        private AppDatabase _context;
         private int SIZE = 32;
 
         public CanvasController(AppDatabase context)
         {
-            _contect = context;
+            _context = context;
         }
 
         [HttpGet]
@@ -25,7 +25,7 @@ namespace NzmsaPhase2BackendAPI.Controllers
         {
             string[,] output = new string[SIZE, SIZE];
 
-            var canvas = _contect.Canvas
+            var canvas = _context.Canvas
                 .Include(c => c.ColorData)
                 .OrderByDescending(c => c.CanvasID)
                 .FirstOrDefault();
@@ -46,11 +46,27 @@ namespace NzmsaPhase2BackendAPI.Controllers
             return JsonConvert.SerializeObject(output);
         }
 
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Canvas>> GetCanvasById(int id)
+        {
+            var canvas = await _context.Canvas
+                .Include(c => c.ColorData)
+                .FirstOrDefaultAsync(c => c.CanvasID == id);
+
+            if (canvas == null)
+            {
+                return NotFound();
+            }
+            return canvas;
+        }
+
+
         [HttpPut]
         [Route("UpdateCell")]
         public async Task<IActionResult> UpdateCell([FromBody] UpdateCellModel data)
         {
-            var tableRow = _contect.Canvas
+            var tableRow = _context.Canvas
                 .Include(c => c.ColorData)
                 .OrderByDescending(c => c.CanvasID)
                 .FirstOrDefault()
@@ -58,7 +74,7 @@ namespace NzmsaPhase2BackendAPI.Controllers
                 .First(row => row.RowIndex == data.Row && row.ColumnIndex == data.Column);
             tableRow.Hex = data.Hex;
 
-            await _contect.SaveChangesAsync();
+            await _context.SaveChangesAsync();
 
             return NoContent();
         }

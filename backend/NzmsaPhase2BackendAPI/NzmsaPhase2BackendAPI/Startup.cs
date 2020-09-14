@@ -80,8 +80,7 @@ namespace NzmsaPhase2BackendAPI
             app.UseHangfireDashboard();
 
             RecurringJob.AddOrUpdate("1",
-                () => PeriodicCanvasJobs.CreateNewCanvas(),
-                Cron.Minutely(),
+                () => PeriodicCanvasJobs.CreateNewCanvas(), "0 0 * * *",
                 TimeZoneInfo.FindSystemTimeZoneById("New Zealand Standard Time"));
 
             app.UseAuthorization();
