@@ -9,7 +9,9 @@ using System.Threading.Tasks;
 
 namespace NzmsaPhase2BackendAPI.Controllers
 {
-    public class CanvasController : Controller
+    [Route("api/[controller]")]
+    [ApiController]
+    public class CanvasController : ControllerBase
     {
         private AppDatabase _context;
         private int SIZE = 32;

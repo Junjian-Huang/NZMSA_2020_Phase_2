@@ -36,7 +36,7 @@ namespace NzmsaPhase2BackendAPI
            {
                options.AddPolicy(MyAllowSpecificOrigins, builder =>
               {
-                  builder.WithOrigins("http://localhost:3000", "http://junjianhuangmsaphase2.azurewebsites.net")
+                  builder.WithOrigins("http://localhost:3000", "http://junjianhuangmsaphase2.azurewebsites.net/swagger")
                       .AllowAnyHeader()
                       .AllowAnyMethod();
               });
@@ -72,7 +72,7 @@ namespace NzmsaPhase2BackendAPI
             app.UseSwaggerUI(x =>
            {
                x.SwaggerEndpoint("/swagger/v1/swagger.json", "My first API");
-               x.RoutePrefix = string.Empty; // launch swagger from root
+               //x.RoutePrefix = string.Empty; // launch swagger from root
            });
 
             app.UseCors(MyAllowSpecificOrigins);
