@@ -32,8 +32,8 @@ export const getArray = async () => {
     });
   }
 
-const HISTORICAL_DATA_URL = API_BASE_URL + "api/HistoricalDatas";
-const COLOR_DATA_URL = API_BASE_URL + "api/ColorDatas";
+const HISTORICAL_DATA_URL = API_BASE_URL + "HistoricalDatas/";
+const COLOR_DATA_URL = API_BASE_URL + "ColorDatas/";
 
 
 // same types as defined in backend/Models/HistoricalData.cs
@@ -68,8 +68,8 @@ export interface ICanvasData {
   colorData: IColorData[];
 }
 
-export const getCanvasById = (id: number): Promise<ICanvasData> => fetch(CANVAS_API_URL + id).then((res) => res.json());
+export const getCanvasById = async (id: number): Promise<ICanvasData> => fetch(CANVAS_API_URL + id).then((res) => res.json());
 
-export const getColorDataById = (id: number): Promise<IColorData> => fetch(COLOR_DATA_URL + id).then((res) => res.json());
+export const getColorDataById = async (id: number): Promise<IColorData> => fetch(COLOR_DATA_URL + id).then((res) => res.json());
 
-export const getHistoricalData = (): Promise<IHistoricalData[]> => fetch(HISTORICAL_DATA_URL).then((res) => res.json());
+export const getHistoricalData = async (): Promise<IHistoricalData[]> => fetch(HISTORICAL_DATA_URL).then((res) => res.json());
